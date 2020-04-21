@@ -3,14 +3,18 @@ Vue.component("info", {
     template:
 	`
     <div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">Panel Heading</div>
-            <div class="panel-body">Panel Content</div>
-        </div>
-        
-        <h3>{{proyecto}}</h3>
-        <h3>{{nombre}}</h3>
-        <h3>{{dpi}}</h3>
+        <div class="card">
+            <div class="card-header">
+            Información
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">{{proyecto}}</h3>
+                <hr>
+                <h4>{{nombre}}</h4>
+                <hr>
+                <h4>{{dpi}}</h4>
+            </div>
+        </div>        
 	</div>
 	`,
     data(){
