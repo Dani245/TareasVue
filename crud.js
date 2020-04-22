@@ -3,6 +3,7 @@ const app = new Vue({
 	data: {		
 		errors: [],
 		tareas: [],
+		tareasCompletadas: [],
 		nuevaTarea: null,
 		Tareadescripcion: null
 	},
@@ -31,6 +32,8 @@ const app = new Vue({
 		editarTarea(event, index) {
 			this.tareas[index].estado = true;
 			localStorage.setItem("tareas-vue", JSON.stringify(this.tareas));
+			this.tareasCompletadas = this.tareas[index];
+			localStorage.setItem("tareas-completadas-vue", JSON.stringify(this.tareasCompletadas))
 		},
 		eliminarTarea(event, index) {
 			this.tareas.splice(index, 1);
@@ -44,6 +47,14 @@ const app = new Vue({
 			this.tareas = [];
 		} else {
 			this.tareas = datosDB;
+		}
+
+		let datosC_DB = JSON.parse(localStorage.getItem("tareas-completadas-vue"));
+		console.log(datosC_DB);
+		if(datosC_DB === null){
+			this.tareasCompletadas=[];
+		} else{
+			this.tareasCompletadas = datosC_DB;
 		}
 	}
 });
