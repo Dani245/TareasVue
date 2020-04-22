@@ -14,7 +14,7 @@ Vue.component("navbar", {
                         <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tareas Realizadas</a>
+                        <a class="nav-link" href="tareascompletadas.html">Tareas Completadas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="acerca.html">Acerca</a>
