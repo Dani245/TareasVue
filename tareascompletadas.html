@@ -18,9 +18,7 @@
 		<div class="container mt-5">
 			<titulo></titulo>					
 			
-			<tarea v-bind:tareas="tareas" v-on:editar="editarTarea" v-on:eliminar="eliminarTarea">
-			</tarea>
-		
+		    <tareacompleta v-bind:tareascompletas="tareascompletas"></tareacompleta>
 
 			<div class="mt-3">
 				<pre>{{$data}}</pre>
@@ -32,7 +30,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="componentes/navbar.js"></script>
 	<script src="componentes/titulo.js"></script>
-	<script src="componentes/tarea.js"></script>
+	<script src="componentes/tareascompletadas.js"></script>
 	<script src="crud.js"></script>
 </body>
 
