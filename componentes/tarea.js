@@ -4,7 +4,7 @@ Vue.component("tarea", {
 	`
 	<div>
     <div class="mt-3" v-for="(tarea, index) of tareas">
-		<div class="card text-white mb-3" :class="['bg', tarea.estado ? 'bg-success' : 'bg-danger']">
+		<div class="card text-white mb-3" :class="['bg', tarea.estado ? 'bg-primary' : 'bg-danger']">
 			<div class="card-header">
 			  <h3>{{index}}. {{tarea.nombre}}</h3>
 			</div>
