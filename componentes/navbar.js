@@ -2,26 +2,18 @@ Vue.component("navbar", {
 	/*html*/
 	template: `
 	<div>
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Proyecto Vue.js</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="tareascompletadas.html">Tareas Completadas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="acerca.html">Acerca</a>
-                    </li>
-                </ul>
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase position-relative" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#app">Proyecto Vue</a><button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html">Home</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="tareascompletadas.html">Tareas Completadas</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="acerca.html">Acerca</a></li>
+                    </ul>
+                </div>
             </div>
-        </nav>
+        </nav>        
     </div>
 	`
 });
