@@ -11,11 +11,11 @@ Vue.component("tarea", {
   			<div class="card-body d-flex justify-content-between align-items-center">    			
 				<p>{{tarea.descripcion}}</p>				
 				<div>
-					<button class="btn btn-primary btn-sm" @click="$emit('editar', $event, index)" v-if="!tareas[index].estado"
+					<button class="btn btn-success btn-sm" @click="$emit('editar', $event, index)" v-if="!tareas[index].estado"
 						v-on:click="tareas[index].estado  = true">
 						OK
 					</button>
-					<button class="btn btn-warning btn-sm" @click="$emit('eliminar', $event, index)">
+					<button class="btn-sm" :class="['btn', tarea.estado ? 'btn-danger' : 'btn-warning']" @click="$emit('eliminar', $event, index)">
 							X
 					</button>
 				</div>
