@@ -31,33 +31,33 @@
 			<!-- Modal -->
 			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Nueva Tarea</h5>						
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-						</button>
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Nueva Tarea</h5>						
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="alert-danger" role="alert">
+							<p v-if="errors.length">				
+								<b>Por favor corrige los siguientes errores:</b>
+								<hr>
+								<ul>
+									<li v-for="error in errors">{{ error }}</li>
+								</ul>
+							</p>
+						</div>
+						<div class="modal-body">
+							<label>Nombre: </label>
+							<input type="text" class="form-control my-3" v-model="nuevaTarea" v-on:keyup.enter="agregar" />
+							<label>Descripción:</label>
+							<input type="text" class="form-control my-3" v-model="Tareadescripcion" v-on:keyup.enter="agregar">
+						</div>
+						<div class="modal-footer">						
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							<button type="button" class="btn btn-primary" v-on:click="agregar">Agregar</button>
+						</div>
 					</div>
-					<div class="alert-danger" role="alert">
-						<p v-if="errors.length">				
-							<b>Por favor corrige los siguientes errores:</b>
-							<hr>
-							<ul>
-								<li v-for="error in errors">{{ error }}</li>
-							</ul>
-						</p>
-					</div>
-					<div class="modal-body">
-						<label>Nombre: </label>
-						<input type="text" class="form-control my-3" v-model="nuevaTarea" v-on:keyup.enter="agregar" />
-						<label>Descripción:</label>
-						<input type="text" class="form-control my-3" v-model="Tareadescripcion" v-on:keyup.enter="agregar">
-					</div>
-					<div class="modal-footer">						
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-						<button type="button" class="btn btn-primary" v-on:click="agregar">Agregar</button>
-					</div>
-				</div>
 				</div>
 			</div>			
 			
