@@ -33,8 +33,8 @@ Vue.component("info", {
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ml-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 mr-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
+                    <div class="col-lg-4 ml-auto"><p class="lead">{{p1}}</p></div>
+                    <div class="col-lg-4 mr-auto"><p class="lead">{{p2}}</p></div>
                 </div>                
             </div>
         </section>
@@ -47,6 +47,8 @@ Vue.component("info", {
             nombre: "José Danilo De Paz Martínez",
             imagen: "assets/img/img.jpg",
             ocupacion: ["Estudiante de Ingeniería en Sistemas","Programador y Diseñador Web"],
+            p1: "Mi nombre es José Danilo De Paz, tengo 24 años de edad. Estudiante de Ingeniería en Sistemas, programador y diseñador web, me gusta escuchar música Rock y Electronica. Suelo jugar videojuegos y leer libros en los tiempos libres.",
+            p2: "Vue es un Framework Frontend de JavaScript, permite construir interfaces de usuario de una forma muy sencilla, reutilizar el código al usar componentes que contienen etiquetas HTML, estilos de CSS y código JavaScript. "
         }
     }
 });
