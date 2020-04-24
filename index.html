@@ -23,15 +23,7 @@
 		<div class="container mt-5">
 			<titulo></titulo>		
 
-			<div class="alert-danger" role="alert">
-				<p v-if="errors.length">				
-					<b>Por favor corrige los siguientes errores:</b>
-					<hr>
-					<ul>
-						<li v-for="error in errors">{{ error }}</li>
-					</ul>
-				</p>
-			</div>
+			
 			
 			<!-- Button trigger modal -->
 			<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
@@ -47,6 +39,15 @@
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 						</button>
+					</div>
+					<div class="alert-danger" role="alert">
+						<p v-if="errors.length">				
+							<b>Por favor corrige los siguientes errores:</b>
+							<hr>
+							<ul>
+								<li v-for="error in errors">{{ error }}</li>
+							</ul>
+						</p>
 					</div>
 					<div class="modal-body">
 						<label>Nombre: </label>
