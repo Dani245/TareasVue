@@ -3,6 +3,11 @@ const app = new Vue({
 	data: {		
 		errors: [],
 		tareas: [],
+		menu: [ 
+			{href: "index.html", nombre: "home"}, 
+			{href: "tareascompletadas.html", nombre: "tareas completadas"},
+			{href: "acerca.html", nombre: "acerca"}
+		],
 		tareascompletas: [],
 		nuevaTarea: null,
 		Tareadescripcion: null
