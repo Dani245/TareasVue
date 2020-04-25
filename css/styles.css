@@ -3892,7 +3892,7 @@ input[type=button].btn-block {
 }
 
 .nav-link {
-  display: block;
+  display: inline-block;
   padding: 0.5rem 1rem;
 }
 .nav-link:hover, .nav-link:focus {
@@ -3909,6 +3909,7 @@ input[type=button].btn-block {
 }
 .nav-tabs .nav-item {
   margin-bottom: -0.125rem;
+  display: inline-block;
 }
 .nav-tabs .nav-link {
   border: 0.125rem solid transparent;
@@ -3999,8 +4000,10 @@ input[type=button].btn-block {
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
-  list-style: none;
+  list-style: none;  
+  text-align: center;
 }
+
 .navbar-nav .nav-link {
   padding-right: 0;
   padding-left: 0;
