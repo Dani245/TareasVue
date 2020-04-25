@@ -70,9 +70,9 @@ const app = new Vue({
 	computed: {
         color(){
             return {
-                'bg-success' : this.contador <= 10,
-                'bg-warning' : this.contador > 10 && this.contador < 20,
-                'bg-danger' : this.contador >= 20
+                'bg-danger' : this.contador <= 25,
+                'bg-warning' : this.contador > 25 && this.contador < 75,
+                'bg-success' : this.contador >= 75
             }
         }
     }
