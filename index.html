@@ -21,7 +21,16 @@
 		<navbar v-bind:menu="menu"></navbar>
 
 		<div class="container mt-5">
-			<titulo></titulo>		
+
+			<div class="progress">
+				<div class="progress-bar" role="progressbar" 
+				:style="{'width': contador+'%'}" aria-valuenow="25"
+				aria-valuemin="0" aria-valuemax="100"
+				:class="color">{{contador}}%</div>
+			</div>
+
+			<titulo></titulo>	
+			<hr>
 
 			<!-- Button trigger modal -->
 			<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
