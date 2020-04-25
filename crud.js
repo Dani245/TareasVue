@@ -10,7 +10,8 @@ const app = new Vue({
 		],
 		tareascompletas: [],
 		nuevaTarea: null,
-		Tareadescripcion: null
+		Tareadescripcion: null,
+		contador: 20
 	},
 	methods: {
 		agregar() {
@@ -65,5 +66,14 @@ const app = new Vue({
 		} else{
 			this.tareascompletas = datosC_DB;
 		}
-	}
+	},
+	computed: {
+        color(){
+            return {
+                'bg-success' : this.contador <= 10,
+                'bg-warning' : this.contador > 10 && this.contador < 20,
+                'bg-danger' : this.contador >= 20
+            }
+        }
+    }
 });
