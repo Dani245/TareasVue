@@ -10,8 +10,9 @@ const app = new Vue({
 		],
 		tareascompletas: [],
 		nuevaTarea: null,
-		Tareadescripcion: null,
-		contador: 20
+		Tareadescripcion: null,	
+		contador: 0,
+		resultado: 0	
 	},
 	methods: {
 		agregar() {
@@ -69,10 +70,24 @@ const app = new Vue({
 	},
 	computed: {
         color(){
+						
+			for(x=0; x<this.tareas.length; x++){
+				if(this.tareas[x].estado===true){
+					this.contador++;
+				}
+			}
+			console.log("Tamaño del array",this.tareas.length);
+			console.log("Contador",this.contador);
+
+			this.resultado= this.contador/this.tareas.length;
+			console.log("Resultado", this.resultado);
+			this.resultado = Math.round(this.resultado*100);
+			console.log("Resultado", this.resultado);
+			this.contador= 0;
             return {
-                'bg-danger' : this.contador <= 25,
-                'bg-warning' : this.contador > 25 && this.contador < 75,
-                'bg-success' : this.contador >= 75
+                'bg-danger' : this.resultado <= 25,
+                'bg-warning' : this.resultado > 25 && this.resultado < 75,
+                'bg-success' : this.resultado >= 75
             }
         }
     }
