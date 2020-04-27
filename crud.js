@@ -76,13 +76,9 @@ const app = new Vue({
 					this.contador++;
 				}
 			}
-			console.log("Tamaño del array",this.tareas.length);
-			console.log("Contador",this.contador);
 
-			this.resultado= this.contador/this.tareas.length;
-			console.log("Resultado", this.resultado);
-			this.resultado = Math.round(this.resultado*100);
-			console.log("Resultado", this.resultado);
+			this.resultado= this.contador/this.tareas.length;			
+			this.resultado = Math.round(this.resultado*100);			
 			this.contador= 0;
             return {
                 'bg-danger' : this.resultado <= 25,
