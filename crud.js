@@ -11,8 +11,6 @@ const app = new Vue({
 		tareascompletas: [],
 		nuevaTarea: null,
 		Tareadescripcion: null,	
-		contador: 0,
-		resultado: 0	
 	},
 	methods: {
 		agregar() {
@@ -70,21 +68,27 @@ const app = new Vue({
 	},
 	computed: {
         color(){
-						
-			for(x=0; x<this.tareas.length; x++){
+			
+            return {
+                'bg-danger' : this.contador <= 25,
+                'bg-warning' : this.contador > 25 && this.contador < 75,
+                'bg-success' : this.contador >= 75
+            }
+		},
+		contador(){
+			let resultado = 0;
+			let tareasMarcadas = 0;
+			let total = this.tareas.length;
+
+			for(var x=0; x<this.tareas.length; x++){
 				if(this.tareas[x].estado===true){
-					this.contador++;
+					tareasMarcadas++;
 				}
 			}
 
-			this.resultado= this.contador/this.tareas.length;			
-			this.resultado = Math.round(this.resultado*100);			
-			this.contador= 0;
-            return {
-                'bg-danger' : this.resultado <= 25,
-                'bg-warning' : this.resultado > 25 && this.resultado < 75,
-                'bg-success' : this.resultado >= 75
-            }
-        }
+			resultado= tareasMarcadas/total;			
+			resultado = Math.round(resultado*100);			
+			return resultado;
+		}
     }
 });
