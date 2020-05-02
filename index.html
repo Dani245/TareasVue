@@ -22,12 +22,7 @@
 
 		<div class="container mt-5">
 
-			<div class="progress">
-				<div class="progress-bar" role="progressbar" 
-				:style="{'width': resultado+'%'}" aria-valuenow="25"
-				aria-valuemin="0" aria-valuemax="100"
-				:class="color">{{resultado}}%</div>
-			</div>
+			<barra v-bind:porcentaje = "contador" v-bind:color="color"></barra>
 
 			<titulo></titulo>	
 			<hr>
@@ -85,6 +80,7 @@
 	<!-- development version, includes helpful console warnings -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="componentes/navbar.js"></script>
+	<script src="componentes/barra-progreso.js"></script>
 	<script src="componentes/titulo.js"></script>
 	<script src="componentes/tarea.js"></script>
 	<script src="crud.js"></script>
