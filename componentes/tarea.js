@@ -6,7 +6,7 @@ Vue.component("tarea", {
     <div class="mt-3" v-for="(tarea, index) of tareas">
 		<div class="card mb-3" :class="['border', tarea.estado ? 'border-primary' : 'border-danger']" >
 		  <div class="card-header">
-		  	<h3>{{index}}. {{tarea.nombre}}</h3>
+		  	<h5>{{index}}. {{tarea.nombre}}</h5>
 		  </div>
 		  <div class="card-body d-flex justify-content-between align-items-center">    			
 		  	<p>{{tarea.descripcion}}</p>				
