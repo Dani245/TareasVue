@@ -80,14 +80,16 @@ const app = new Vue({
 			let tareasMarcadas = 0;
 			let total = this.tareas.length;
 
-			for(var x=0; x<this.tareas.length; x++){
-				if(this.tareas[x].estado===true){
-					tareasMarcadas++;
+			if(total>0){
+				for(var x=0; x<this.tareas.length; x++){
+					if(this.tareas[x].estado===true){
+						tareasMarcadas++;
+					}
 				}
+				resultado = tareasMarcadas/total;			
+				resultado = Math.round(resultado*100);			
 			}
-
-			resultado= tareasMarcadas/total;			
-			resultado = Math.round(resultado*100);			
+						
 			return resultado;
 		}
     }
