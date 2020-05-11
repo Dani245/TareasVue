@@ -10,12 +10,12 @@ Vue.component("tarea", {
 		  </div>
 		  <div class="card-body d-flex justify-content-between align-items-center">    			
 		  	<p>{{tarea.descripcion}}</p>				
-		  	<div>
+		  	<div v-if="!tareas[index].completa">
 				<button class="btn btn-success btn-sm" @click="$emit('editar', $event, index)" v-if="!tareas[index].estado"
 				  v-on:click="tareas[index].estado  = true">
 				  OK
 			  	</button>
-			  	<button class="btn btn-danger btn-sm" @click="$emit('eliminar', $event, index)">
+			  	<button class="btn btn-danger btn-sm" @click="$emit('eliminar', $event, index)" >
 					  X
 			  	</button>
 		  	</div>
