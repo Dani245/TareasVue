@@ -40,7 +40,8 @@ const app = new Vue({
 			this.tareascompletas.push({
 				nombre: this.tareas[index].nombre,
 				descripcion: this.tareas[index].descripcion,
-				estado: this.tareas[index].estado
+				estado: this.tareas[index].estado,
+				completa: true
 			});			
 			localStorage.setItem("tareas-completadas-vue", JSON.stringify(this.tareascompletas));
 		},
