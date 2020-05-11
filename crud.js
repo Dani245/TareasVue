@@ -17,10 +17,16 @@ const app = new Vue({
 			this.mensajes = [];
 			if (!this.nuevaTarea || !this.Tareadescripcion) {
 				if(!this.nuevaTarea){
-					this.mensajes.push('Nombre es un campo requerido!!');
+					this.mensajes.push({
+						estado: false, 
+						descripcion: "Nombre es un campo requerido!!"
+					});
 				}
 				if(!this.Tareadescripcion){
-					this.mensajes.push('Descripción es un campo requerido!!');
+					this.mensajes.push({
+						estado: false, 
+						descripcion: "Descripcion es un campo requerido!!"
+					});
 				}				
 			}
 			else{
@@ -32,7 +38,11 @@ const app = new Vue({
 				this.nuevaTarea = "";
 				this.Tareadescripcion="";
 				localStorage.setItem("tareas-vue", JSON.stringify(this.tareas));
-			}			  
+				this.mensajes.push({
+					estado: true, 
+					descripcion: "Registro guardado con exito!!"
+				});				
+			}						  
 		},
 		editarTarea(event, index) {
 			this.tareas[index].estado = true;
