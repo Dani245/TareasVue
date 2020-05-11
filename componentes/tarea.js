@@ -4,22 +4,22 @@ Vue.component("tarea", {
 	`
 	<div>
     <div class="mt-3" v-for="(tarea, index) of tareas">
-		<div class="card text-white mb-3" :class="['bg', tarea.estado ? 'bg-primary' : 'bg-danger']">
-			<div class="card-header">
-			  <h3>{{index}}. {{tarea.nombre}}</h3>
-			</div>
-  			<div class="card-body d-flex justify-content-between align-items-center">    			
-				<p>{{tarea.descripcion}}</p>				
-				<div>
-					<button class="btn btn-success btn-sm" @click="$emit('editar', $event, index)" v-if="!tareas[index].estado"
-						v-on:click="tareas[index].estado  = true">
-						OK
-					</button>
-					<button class="btn-sm" :class="['btn', tarea.estado ? 'btn-danger' : 'btn-warning']" @click="$emit('eliminar', $event, index)">
-							X
-					</button>
-				</div>
-  			</div>
+		<div class="card mb-3" :class="['border', tarea.estado ? 'border-primary' : 'border-danger']" >
+		  <div class="card-header">
+		  	<h3>{{index}}. {{tarea.nombre}}</h3>
+		  </div>
+		  <div class="card-body d-flex justify-content-between align-items-center">    			
+		  	<p>{{tarea.descripcion}}</p>				
+		  	<div>
+				<button class="btn btn-success btn-sm" @click="$emit('editar', $event, index)" v-if="!tareas[index].estado"
+				  v-on:click="tareas[index].estado  = true">
+				  OK
+			  	</button>
+			  	<button class="btn btn-danger btn-sm" @click="$emit('eliminar', $event, index)">
+					  X
+			  	</button>
+		  	</div>
+		</div>
 		</div>
 
 	</div>
@@ -28,9 +28,4 @@ Vue.component("tarea", {
 	props: {
 		tareas: Array,
 	},
-    data(){
-        return{
-			nombre: "José",
-        }
-    }
 });
