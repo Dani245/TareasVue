@@ -1,7 +1,7 @@
 const app = new Vue({
 	el: "#app",
 	data: {		
-		errors: [],
+		mensajes: [],
 		tareas: [],
 		menu: [ 
 			{href: "index.html", nombre: "home"}, 
@@ -14,13 +14,13 @@ const app = new Vue({
 	},
 	methods: {
 		agregar() {
-			this.errors = [];
+			this.mensajes = [];
 			if (!this.nuevaTarea || !this.Tareadescripcion) {
 				if(!this.nuevaTarea){
-					this.errors.push('Nombre es un campo requerido!!');
+					this.mensajes.push('Nombre es un campo requerido!!');
 				}
 				if(!this.Tareadescripcion){
-					this.errors.push('Descripción es un campo requerido!!');
+					this.mensajes.push('Descripción es un campo requerido!!');
 				}				
 			}
 			else{
