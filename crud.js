@@ -11,11 +11,15 @@ const app = new Vue({
 		tareascompletas: [],
 		nuevaTarea: null,
 		Tareadescripcion: null,	
+		Fechainicio: null,
+		Fechafinal: null,
+		Horainicio: null,
+		Horafinal: null
 	},
 	methods: {
 		agregar() {
 			this.mensajes = [];
-			if (!this.nuevaTarea || !this.Tareadescripcion) {
+			if (!this.nuevaTarea || !this.Tareadescripcion || !this.Fechainicio || !this.Fechafinal || !this.Horainicio || !this.Horafinal) {
 				if(!this.nuevaTarea){
 					this.mensajes.push({
 						estado: false, 
@@ -27,7 +31,31 @@ const app = new Vue({
 						estado: false, 
 						descripcion: "Descripcion es un campo requerido!!"
 					});
+				}	
+				if(!this.Fechainicio){
+					this.mensajes.push({
+						estado: false, 
+						descripcion: "Fecha Inicio es un campo requerido!!"
+					});
+				}	
+				if(!this.Fechafinal){
+					this.mensajes.push({
+						estado: false, 
+						descripcion: "Fecha Final es un campo requerido!!"
+					});
 				}				
+				if(!this.Horafinal){
+					this.mensajes.push({
+						estado: false, 
+						descripcion: "Hora Inicio es un campo requerido!!"
+					});
+				}
+				if(!this.Horafinal){
+					this.mensajes.push({
+						estado: false, 
+						descripcion: "Hora Final es un campo requerido!!"
+					});
+				}
 			}
 			else{
 				this.tareas.push({
