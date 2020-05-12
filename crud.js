@@ -58,18 +58,46 @@ const app = new Vue({
 				}
 			}
 			else{
-				this.tareas.push({
-					nombre: this.nuevaTarea,
-					descripcion: this.Tareadescripcion,
-					estado: false
-				});
-				this.nuevaTarea = "";
-				this.Tareadescripcion="";
-				localStorage.setItem("tareas-vue", JSON.stringify(this.tareas));
-				this.mensajes.push({
-					estado: true, 
-					descripcion: "Registro guardado con exito!!"
-				});				
+				this.Fechainicio = new Date(this.Fechainicio);
+				this.Fechafinal = new Date(this.Fechafinal);
+				
+				if(this.Fechainicio < this.fechalimite){
+					
+					this.mensajes.push({
+						estado: false, 
+						descripcion: "Debe elegir una fecha mayor en Fecha Inicio!!"
+					});
+				}
+				if(this.Fechafinal < this.fechalimite){
+					this.mensajes.push({
+						estado: false, 
+						descripcion: "Debe elegir una fecha mayor en Fecha Final!!"
+					});
+				}
+				
+				if(this.mensajes.length < 1){
+					
+					this.tareas.push({
+						nombre: this.nuevaTarea,
+						descripcion: this.Tareadescripcion,
+						fechaini: this.Fechainicio,
+						fechafin: this.Fechafinal,
+						horaini: this.Horainicio,
+						fechafin: this.Fechafinal,
+						estado: false
+					});
+					this.nuevaTarea = "";
+					this.Tareadescripcion="";
+					this.Horainicio= "";
+					this.Horafinal= "";
+					localStorage.setItem("tareas-vue", JSON.stringify(this.tareas));
+					
+					this.mensajes.push({
+						estado: true, 
+						descripcion: "Registro guardado con exito!!"
+					});
+
+				}
 			}						  
 		},
 		editarTarea(event, index) {
@@ -130,6 +158,12 @@ const app = new Vue({
 			}
 						
 			return resultado;
+		},
+		fechalimite(){
+			let hoy = new Date();
+
+			hoy.setHours(0,0,0,0);
+			return hoy;
 		}
     }
 });
