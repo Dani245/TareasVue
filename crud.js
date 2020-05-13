@@ -83,7 +83,7 @@ const app = new Vue({
 						fechaini: this.Fechainicio,
 						fechafin: this.Fechafinal,
 						horaini: this.Horainicio,
-						fechafin: this.Fechafinal,
+						horafin: this.Horafinal,
 						estado: false
 					});
 					this.nuevaTarea = "";
