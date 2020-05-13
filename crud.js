@@ -58,17 +58,17 @@ const app = new Vue({
 				}
 			}
 			else{
-				this.Fechainicio = new Date(this.Fechainicio);
-				this.Fechafinal = new Date(this.Fechafinal);
+				let Fi = new Date(this.Fechainicio);
+				let Ff = new Date(this.Fechafinal);
 				
-				if(this.Fechainicio < this.fechalimite){
+				if(Fi < this.fechalimite){
 					
 					this.mensajes.push({
 						estado: false, 
 						descripcion: "Debe elegir una fecha mayor en Fecha Inicio!!"
 					});
 				}
-				if(this.Fechafinal < this.fechalimite){
+				if(Ff < this.fechalimite){
 					this.mensajes.push({
 						estado: false, 
 						descripcion: "Debe elegir una fecha mayor en Fecha Final!!"
@@ -80,10 +80,8 @@ const app = new Vue({
 					this.tareas.push({
 						nombre: this.nuevaTarea,
 						descripcion: this.Tareadescripcion,
-						fechaini: this.Fechainicio,
-						fechafin: this.Fechafinal,
-						horaini: this.Horainicio,
-						horafin: this.Horafinal,
+						fechaini: this.unionfecha(this.Fechainicio,this.Horainicio),
+						fechafin: this.unionfecha(this.Fechafinal, this.Horafinal),						
 						estado: false
 					});
 					this.nuevaTarea = "";
@@ -114,6 +112,12 @@ const app = new Vue({
 		eliminarTarea(event, index) {
 			this.tareas.splice(index, 1);
 			localStorage.setItem("tareas-vue", JSON.stringify(this.tareas));
+		},
+		unionfecha(fecha, hora){
+			let date = fecha+" "+hora;
+			date = new Date(date);
+
+			return date;
 		}
 	},
 	created: function() {
