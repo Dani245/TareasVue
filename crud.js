@@ -142,7 +142,7 @@ const app = new Vue({
 				this.regresivo = '' + dias + ' : ' + horas + ' : ' + minutos + ' : ' + segundos;
 			}
 			else
-			{				
+			{
 				this.regresivo = 'Tiempo expirado';
 			}			
 		} 
