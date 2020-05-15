@@ -14,7 +14,8 @@ const app = new Vue({
 		Fechainicio: null,
 		Fechafinal: null,
 		Horainicio: null,
-		Horafinal: null
+		Horafinal: null,
+		regresivo: 0,
 	},
 	methods: {
 		agregar() {
@@ -118,9 +119,40 @@ const app = new Vue({
 			date = new Date(date);
 
 			return date;
-		}
+		},
+		ConteoRegresivo()
+		{
+			let finicio = new Date();
+			let ffin = new Date('2020-05-16T22:46:00.000Z');
+			let dias = 0;
+			let horas = 0;
+			let minutos = 0;
+			let segundos = 0;
+		
+			if (finicio<ffin)
+			{
+				let diferencia=(ffin.getTime()-finicio.getTime())/1000;
+				dias=Math.floor(diferencia/86400);
+				diferencia=diferencia-(86400*dias);
+				horas=Math.floor(diferencia/3600);
+				diferencia=diferencia-(3600*horas);
+				minutos=Math.floor(diferencia/60);
+				diferencia=diferencia-(60*minutos);
+				segundos=Math.floor(diferencia);				
+				this.regresivo = '' + dias + ' : ' + horas + ' : ' + minutos + ' : ' + segundos;
+			}
+			else
+			{				
+				this.regresivo = 'Tiempo expirado';
+			}			
+		} 
 	},
 	created: function() {
+		let self = this;
+		setInterval(function(){
+			self.ConteoRegresivo();
+		},1000);		
+
 		let datosDB = JSON.parse(localStorage.getItem("tareas-vue"));
 		console.log(datosDB);
 		if (datosDB === null) {
@@ -168,6 +200,9 @@ const app = new Vue({
 
 			hoy.setHours(0,0,0,0);
 			return hoy;
+		},
+		tiempoactual(){
+			return this.regresivo;
 		}
     }
 });
