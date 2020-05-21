@@ -15,7 +15,7 @@ const app = new Vue({
 		Fechafinal: null,
 		Horainicio: null,
 		Horafinal: null,
-		regresivo: 0,
+		regresivo: "",
 	},
 	methods: {
 		agregar() {
@@ -123,7 +123,7 @@ const app = new Vue({
 		ConteoRegresivo()
 		{
 			let finicio = new Date();
-			let ffin = new Date('2020-05-16T22:46:00.000Z');
+			let ffin = new Date('2020-05-21T22:46:00.000Z');
 			let dias = 0;
 			let horas = 0;
 			let minutos = 0;
