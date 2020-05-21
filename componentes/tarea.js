@@ -10,7 +10,8 @@ Vue.component("tarea", {
 		  </div>
 		  <div class="card-body d-flex justify-content-between align-items-center">    			
 		  	<p>{{tarea.descripcion}}</p>				
-		  	<div v-if="!tareas[index].completa">
+			  <div v-if="!tareas[index].completa">
+				<h3>{{regresivo}}</h3>
 				<button class="btn btn-success btn-sm" @click="$emit('editar', $event, index)" v-if="!tareas[index].estado"
 				  v-on:click="tareas[index].estado  = true">
 				  OK
@@ -27,5 +28,6 @@ Vue.component("tarea", {
 	`,
 	props: {
 		tareas: Array,
+		regresivo: String,
 	},
 });
